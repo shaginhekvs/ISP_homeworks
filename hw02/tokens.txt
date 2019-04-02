@@ -1,2 +1,7 @@
 ex1 = "+NBLtMoPvBSGK41o1ed5CgcLf5zYBWcLjKYN9FBXGBc="
 ex2 = "GJje0n+dsjvLzBrEF7hKjHj9IWYMIaKWi4xOKt9HIdQ="
+ex3 = "vjKzLEDrv60IsXDcefbZZU7AfSYm/X31zu2ePO62K44="
+ex4a = "a69YAerdJnoEAahcQmcFbx5przxq1KrclXg1oBHv5mY="
+ex4b = "ITYRxe9sj2XBz+jFzylGmEvIK9SGbgcyTotoB7YlbEA="
+
+
