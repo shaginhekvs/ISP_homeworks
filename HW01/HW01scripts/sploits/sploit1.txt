@@ -1,0 +1,7 @@
+Solution below is inspired from Aleph One, Smashing the Stack for Fun and Profit, Phrack 49 #14. 
+
+We can have a stack overflow in buf[240] easily because strcpy copies the argument into buf without having any length check. So if have a big enough char array which gets copied into buf, since it's defined on stack, the overflow will overwrite the return address. 
+So all we need to do is make a large enough input array , and make sure when the stack pointer reaches the byte after the array it is pointed to memory location at the starting of buf. Inside the buf we have the shellcode which will be executed and give us the shell. 
+We have to be careful where to start the shell code because if the pointer returns to somewhere in between the shellcode, it will not be fully executed and have segmentation fault. So we will fill the start 100 characters of array with NOPs such that our pointer will return to the nop and move to the shellcode after executing nops. 
+By using the command frame foo and I was able to find the buffer is somewhere around 0xbffffd78 and then in the Buffer array I added the following : [NOP,NOP,NOP,...,SHELLCODE,0xbffffd78,0xbffffd78,..,'/0']
+

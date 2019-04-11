@@ -1,0 +1,5 @@
+This solution is inspired from klog, The Frame Pointer Overwrite, Phrack 55 #08.
+
+
+In target2 we copy 241 characters from the char array in the arguments to the buffer. Thus, we have space for 1 extra character to cause the buffer overflow. So the strategy for sploit2 will be to first find the exact location of the beginning of buffer which is at 0xbffffc88 and then use the last byte to overwrite the address of the next instruction on stack which is epd. At the end of function ebp is moved to esp which will then move the pointer to the buffer and the shell code will be executed. 
+So I copied the last byte to 0x7c which should be where our nops are. 

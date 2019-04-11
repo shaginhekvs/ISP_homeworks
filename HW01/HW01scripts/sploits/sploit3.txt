@@ -1,0 +1,6 @@
+This is inspired from Basic Integer Overflows​ , Blexim
+
+In target3, we can see that the in function foo : count < MAX_WIDGETS is compared but count is explicitly casted from unsigned int input to signed, which can lead to an overflow and the condition check being passed for a large int value. 2nd overflow happens when count is multiplied by sizeof(widget_t) = 20, if this value is in a reasonable range, we can have a buffer overflow which will give us the shell. 
+So I filled the buffer as follows : [NOP,NOP...,SHELLCODE,\x40\xdc\xff\xbf,'\0']
+
+The second last value in buffer is the address of start of buffer and as we can see, this value is written in little endian based on how the buffer is written. This address overwrites ebp which is then moved to esp and gives us the shell. 
