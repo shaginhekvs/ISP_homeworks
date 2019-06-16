@@ -13,7 +13,7 @@ import (
 	"go.dedis.ch/onet/v3/network"
 )
 
-const email = "fouad.mazen@epfl.ch"
+const email = "keshav.singh@epfl.ch"
 
 func GenerateRandomBytes(n int) ([]byte, error) {
     b := make([]byte, n)
@@ -66,7 +66,7 @@ func main() {
 		}
 		latest_hash := all_blocks.Update[len(all_blocks.Update)-1].Hash
 		// Mine a correct hash with 3 leading 0 bytes -- Add your code here
-		fmt.Println("Mine a correct hash with 3 leading 0 bytes: Add code")
+		fmt.Println("Mine a correct hash with 3 leading 0 bytes: code is below")
 		email_byte := []byte(email)
 		var data []uint8
 		for{
@@ -84,10 +84,10 @@ func main() {
 			if hash_hex[0:6] == "000000"{
 				break
 			}
-	
+
 		}
 		//Store the new block -- Add your code here
-		fmt.Println("Storing the new block: Add code")
+		fmt.Println("Storing the new block: Adding the code")
 		two_latest_blocks, err_ := cl.StoreSkipBlock(all_blocks.Update[0], nil, data)
 
 		if err_ != nil{
@@ -95,5 +95,5 @@ func main() {
 		}
 		fmt.Println(two_latest_blocks)
 	}
-	
+
 }

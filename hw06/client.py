@@ -191,5 +191,5 @@ if __name__ == '__main__':
     # while you test your solution localy,
     # but when you want to upload your script for grading,
     # make sure this is the function which is called here!
-    #grading_main()
-    test_function()
+    grading_main()
+    #test_function()
